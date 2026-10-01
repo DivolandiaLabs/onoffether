@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Installer return codes — OnOffEther</title>
+<meta name="description" content="Return codes, silent install switches and silent uninstall command for the OnOffEther installer.">
+<link rel="icon" href="favicon.ico">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <img src="img/icon.png" alt="">
+    <span class="name">OnOffEther</span>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap legal">
+  <h1>Installer return codes</h1>
+  <p class="updated">Applies to OnOffEther 1.5.0 and later · Last updated: 2 October 2026</p>
+
+  <p>This page documents the command line and the exit codes of <code>OnOffEther-Setup-x.y.z.exe</code>, for unattended deployment and for store distribution.</p>
+
+  <h2>Return codes</h2>
+  <table class="spec">
+    <tr><th style="width:18%">Code</th><th style="width:30%; color:var(--text)">Meaning</th><th style="color:var(--text)">Description</th></tr>
+    <tr><td><strong>0</strong></td><td>Success</td><td>The application was installed. No reboot is required at any point.</td></tr>
+    <tr><td><strong>1602</strong></td><td>Cancelled by the user</td><td>The setup window was closed without installing. Only happens in interactive mode.</td></tr>
+    <tr><td><strong>1603</strong></td><td>Fatal error during installation</td><td>Files could not be copied, or the scheduled tasks could not be registered. Nothing is left half installed.</td></tr>
+    <tr><td><strong>1925</strong></td><td>Administrator rights required</td><td>A silent install was started without elevation. Run the installer elevated and it will succeed.</td></tr>
+  </table>
+  <p>No other values are returned. There is no reboot-required code, because installing or removing the app never needs one.</p>
+
+  <h2>Silent install</h2>
+  <table class="spec">
+    <tr><th>Switch</th><th style="color:var(--text)">Effect</th></tr>
+    <tr><td><code>/S</code></td><td>Installs with no user interface. <code>/silent</code>, <code>/quiet</code>, <code>/q</code> and <code>/verysilent</code> are accepted as synonyms.</td></tr>
+    <tr><td><code>/lang=xx</code></td><td>Sets the default language of the application: <code>en</code>, <code>es</code>, <code>fr</code>, <code>de</code> or <code>pt</code>. Without it, English is used. Each user can change it later inside the app.</td></tr>
+    <tr><td><code>/desktop</code></td><td>Also creates a desktop shortcut. Omitted, only a Start menu shortcut is created.</td></tr>
+  </table>
+
+  <p>Example:</p>
+  <p><code>OnOffEther-Setup-1.5.0.exe /S /lang=en</code></p>
+
+  <h2>Silent uninstall</h2>
+  <p><code>"C:\Program Files\OnOffEther\OnOffEther.exe" /uninstall /silent</code></p>
+  <p>The same command is published in the registry as <code>QuietUninstallString</code>, under<br>
+  <code>HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\OnOffEther</code>.</p>
+  <p>Uninstalling returns the same codes as above. If the wired connection is disabled at that moment, it is enabled again before anything is removed, so the machine is never left without network access.</p>
+
+  <h2>Detection</h2>
+  <p>Once installed, the app can be detected through its entry in Programs and Features:</p>
+  <table class="spec">
+    <tr><th>Registry key</th><td><code>HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\OnOffEther</code></td></tr>
+    <tr><th>DisplayName</th><td>OnOffEther</td></tr>
+    <tr><th>Publisher</th><td>Divolandia Labs</td></tr>
+    <tr><th>DisplayVersion</th><td>1.5.0</td></tr>
+    <tr><th>Install location</th><td><code>C:\Program Files\OnOffEther</code></td></tr>
+  </table>
+
+  <h2>What the installer changes</h2>
+  <ul>
+    <li>Copies <code>OnOffEther.exe</code> and two icon files to <code>C:\Program Files\OnOffEther</code>.</li>
+    <li>Registers two scheduled tasks, <code>OnOffEther_On</code> and <code>OnOffEther_Off</code>, which switch the Ethernet adapter with elevated rights so the app never shows a permission prompt.</li>
+    <li>Creates a Start menu shortcut, and a desktop one with <code>/desktop</code>.</li>
+    <li>Writes the uninstall entry and the default language under <code>HKLM\SOFTWARE\OnOffEther</code>.</li>
+  </ul>
+  <p>Uninstalling removes every one of those items.</p>
+
+  <h2>Contact</h2>
+  <p>Questions about deployment: <a href="https://github.com/DivolandiaLabs/onoffether/issues">github.com/DivolandiaLabs/onoffether/issues</a></p>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <span>© 2026 Divolandia Labs</span>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+      <a href="https://github.com/DivolandiaLabs/onoffether">GitHub</a>
+    </nav>
+  </div>
+</footer>
+
+</body>
+</html>
