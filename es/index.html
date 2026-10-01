@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OnOffEther — Enciende y apaga el internet por cable con un clic</title>
+<meta name="description" content="OnOffEther es un programa diminuto para Windows que enciende y apaga la conexión por cable desde un panel con botones ON y OFF, o desde el propio icono de la barra de tareas.">
+<link rel="icon" href="../favicon.ico">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <img src="../img/icon.png" alt="">
+    <span class="name">OnOffEther</span>
+    <nav>
+      <a href="#features">Qué hace</a>
+      <a href="#install">Instalación</a>
+      <a href="#faq">Dudas</a>
+      <a href="#support">Soporte</a>
+      <a href="../">English</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <div class="hero">
+    <img class="icon" src="../img/icon.png" alt="Icono de OnOffEther">
+    <h1>Enciende y apaga el internet<br>por cable con un clic</h1>
+    <p class="tagline">OnOffEther activa y desactiva tu tarjeta de red por cable desde un panel pequeño, o directamente desde el icono de la barra de tareas, sin pedirte permisos cada vez.</p>
+    <div class="actions">
+      <a class="btn btn-primary" href="https://github.com/divolandialabs/onoffether/releases/latest">Descargar para Windows</a>
+      <a class="btn btn-ghost" href="#how">Cómo funciona</a>
+    </div>
+    <p class="meta">Versión 1.5.0 · 121 KB · Windows 10 y 11 · Gratis · Sin anuncios, sin cuentas y sin recoger datos</p>
+  </div>
+
+  <div class="shots">
+    <figure>
+      <img src="../img/panel-dark.png" alt="El panel de OnOffEther en tema oscuro indicando que la conexión por cable está encendida">
+      <figcaption>El panel, tema oscuro</figcaption>
+    </figure>
+    <figure>
+      <img src="../img/panel-light.png" alt="El panel de OnOffEther en tema claro">
+      <figcaption>El panel, tema claro</figcaption>
+    </figure>
+  </div>
+
+  <section id="features">
+    <h2>Qué hace</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>Un panel con dos botones</h3>
+        <p>ON y OFF, y una línea que te dice si ahora mismo hay cable conectado. Sin menús que rebuscar.</p>
+      </div>
+      <div class="card">
+        <h3>Clic derecho en la barra de tareas</h3>
+        <p>Ánclalo una vez y el menú del clic derecho te ofrece "Encender" y "Apagar" sin abrir el programa.</p>
+      </div>
+      <div class="card">
+        <h3>Sin permisos cada vez</h3>
+        <p>Windows pide permiso de administrador una sola vez, al instalar. A partir de ahí el cambio es instantáneo.</p>
+      </div>
+      <div class="card">
+        <h3>Tema claro y oscuro</h3>
+        <p>Elige el que prefieras en el menú del engranaje. Se recuerda para la próxima vez.</p>
+      </div>
+      <div class="card">
+        <h3>Cinco idiomas</h3>
+        <p>Español, inglés, francés, alemán y portugués, y puedes cambiarlo en cualquier momento.</p>
+      </div>
+      <div class="card">
+        <h3>Diminuto y silencioso</h3>
+        <p>121 KB, sin servicios en segundo plano, sin actualizador y sin telemetría. Solo se ejecuta mientras tienes su ventana abierta.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="how">
+    <h2>Cómo funciona</h2>
+    <p>OnOffEther hace exactamente lo mismo que harías tú a mano en el Administrador de dispositivos: activa o desactiva la tarjeta de red por cable, usando las funciones de red que ya trae Windows. No intercepta nada ni desvía tu tráfico por ningún sitio.</p>
+    <p>Apagar la tarjeta corta la conexión por cable por completo, igual que si desenchufaras el cable. Al encenderla otra vez, Windows se vuelve a conectar solo en un par de segundos.</p>
+    <p>Cambiar una tarjeta de red exige permisos de administrador, y por eso Windows normalmente muestra un aviso. Durante la instalación, OnOffEther registra dos tareas programadas de Windows (una para encender y otra para apagar), de modo que después el cambio se hace sin ningún aviso. Las dos tareas se borran al desinstalar.</p>
+    <div class="note">
+      <strong>Solo toca el cable.</strong> El wifi, el Bluetooth y las tarjetas virtuales (VPN, máquinas virtuales, Hyper-V) no se tocan nunca. Si tu PC tiene varias tarjetas Ethernet, se cambian todas a la vez.
+    </div>
+  </section>
+
+  <section id="install">
+    <h2>Instalación</h2>
+    <ol class="steps">
+      <li>Descarga <strong>OnOffEther-Setup-1.5.0.exe</strong> y ábrelo. Windows te pedirá permiso de administrador una vez.</li>
+      <li>Elige tu idioma en el desplegable de arriba a la derecha y pulsa <strong>Instalar</strong>.</li>
+      <li>Pulsa <strong>Abrir OnOffEther</strong>. Cuando aparezca el icono en la barra de tareas, haz clic derecho sobre él y elige <strong>Anclar a la barra de tareas</strong>.</li>
+    </ol>
+    <p>A partir de ahí: clic en el icono para abrir el panel ON/OFF, o clic derecho para cambiarlo al momento.</p>
+
+    <h3>Desinstalar</h3>
+    <p>Configuración → Aplicaciones → Aplicaciones instaladas → OnOffEther → Desinstalar. Si en ese momento la conexión por cable está apagada, se vuelve a encender antes de borrar nada, para que no te quedes sin internet.</p>
+
+    <h3>Requisitos</h3>
+    <table class="spec">
+      <tr><th>Sistema operativo</th><td>Windows 10 o Windows 11</td></tr>
+      <tr><th>Equipo</th><td>Una tarjeta de red por cable (interna o por USB)</td></tr>
+      <tr><th>Permisos</th><td>Administrador, solo para instalar o desinstalar</td></tr>
+      <tr><th>Espacio en disco</th><td>Unos 130 KB</td></tr>
+    </table>
+  </section>
+
+  <section id="faq">
+    <h2>Dudas frecuentes</h2>
+    <dl class="faq">
+      <dt>¿Afecta al wifi?</dt>
+      <dd>No. Solo cambia las tarjetas de red por cable, así que tu wifi sigue funcionando igual que antes.</dd>
+
+      <dt>¿Me pedirá permiso cada vez que lo use?</dt>
+      <dd>No. El permiso se da una sola vez, durante la instalación.</dd>
+
+      <dt>¿Recoge algún dato?</dt>
+      <dd>No. OnOffEther no se conecta a internet por su cuenta ni envía nada a ninguna parte. Puedes leer la <a href="privacy.html">política de privacidad</a>.</dd>
+
+      <dt>¿Es seguro apagar la tarjeta?</dt>
+      <dd>Sí. Es el mismo interruptor que ofrece el propio Windows en el Administrador de dispositivos y no se modifica nada de forma permanente. Eso sí: si el cable es tu única conexión, al apagarlo el PC se queda sin internet hasta que lo vuelvas a encender.</dd>
+
+      <dt>¿Y si mi PC tiene dos tarjetas de red?</dt>
+      <dd>Se cambian a la vez, y el panel te indica cuántas ha encontrado.</dd>
+
+      <dt>¿Puedo cambiar el idioma después?</dt>
+      <dd>Sí, desde el icono del engranaje del panel. La elección se guarda para tu usuario de Windows.</dd>
+    </dl>
+  </section>
+
+  <section id="support">
+    <h2>Soporte</h2>
+    <p>¿Algo no funciona o se te ocurre una mejora? Abre un aviso y te respondemos ahí:</p>
+    <p><a href="https://github.com/divolandialabs/onoffether/issues">github.com/divolandialabs/onoffether/issues</a></p>
+    <p>Si es un problema, ayuda mucho que indiques qué versión de Windows usas y el nombre de tu tarjeta de red, que es la línea gris del centro del panel.</p>
+  </section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <span>© 2026 Divolandia Labs</span>
+    <nav>
+      <a href="privacy.html">Privacidad</a>
+      <a href="terms.html">Condiciones</a>
+      <a href="../">English</a>
+      <a href="https://github.com/divolandialabs/onoffether">GitHub</a>
+    </nav>
+  </div>
+</footer>
+
+</body>
+</html>

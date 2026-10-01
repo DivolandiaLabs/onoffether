@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OnOffEther — Turn your wired internet on and off with one click</title>
+<meta name="description" content="OnOffEther is a tiny Windows app that turns your wired Ethernet connection on and off from a simple ON/OFF panel or straight from the taskbar icon.">
+<link rel="icon" href="favicon.ico">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <img src="img/icon.png" alt="">
+    <span class="name">OnOffEther</span>
+    <nav>
+      <a href="#features">Features</a>
+      <a href="#install">Install</a>
+      <a href="#faq">FAQ</a>
+      <a href="#support">Support</a>
+      <a href="es/">Español</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <div class="hero">
+    <img class="icon" src="img/icon.png" alt="OnOffEther icon">
+    <h1>Turn your wired internet<br>on and off with one click</h1>
+    <p class="tagline">OnOffEther enables and disables your Ethernet adapter from a small panel — or straight from the taskbar icon, without asking for permission every time.</p>
+    <div class="actions">
+      <a class="btn btn-primary" href="https://github.com/divolandialabs/onoffether/releases/latest">Download for Windows</a>
+      <a class="btn btn-ghost" href="#how">How it works</a>
+    </div>
+    <p class="meta">Version 1.5.0 · 121 KB · Windows 10 and 11 · Free · No ads, no accounts, no data collected</p>
+  </div>
+
+  <div class="shots">
+    <figure>
+      <img src="img/panel-dark.png" alt="The OnOffEther panel in dark theme showing the wired connection is on">
+      <figcaption>The panel, dark theme</figcaption>
+    </figure>
+    <figure>
+      <img src="img/panel-light.png" alt="The OnOffEther panel in light theme">
+      <figcaption>The panel, light theme</figcaption>
+    </figure>
+  </div>
+
+  <section id="features">
+    <h2>What it does</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>A panel with two buttons</h3>
+        <p>ON and OFF, plus a line telling you whether the cable is connected right now. No menus to dig through.</p>
+      </div>
+      <div class="card">
+        <h3>Right-click the taskbar icon</h3>
+        <p>Pin it once and the right-click menu offers "Turn on" and "Turn off" directly, without opening the app.</p>
+      </div>
+      <div class="card">
+        <h3>No permission prompts</h3>
+        <p>Windows asks for administrator rights once, while installing. After that, switching is instant and silent.</p>
+      </div>
+      <div class="card">
+        <h3>Light and dark themes</h3>
+        <p>Pick the one you like from the gear menu. It is remembered for next time.</p>
+      </div>
+      <div class="card">
+        <h3>Five languages</h3>
+        <p>English, Spanish, French, German and Portuguese, switchable at any moment.</p>
+      </div>
+      <div class="card">
+        <h3>Tiny and quiet</h3>
+        <p>121 KB, no background service, no updater, no telemetry. It only runs while its window is open.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="how">
+    <h2>How it works</h2>
+    <p>OnOffEther does exactly what you would do by hand in Device Manager: it enables or disables the physical Ethernet adapter, using the network interfaces that are built into Windows. Nothing is intercepted, filtered or routed through anywhere else.</p>
+    <p>Turning the adapter off cuts the wired connection completely, the same as unplugging the cable. Turning it back on restores it, and Windows reconnects by itself a couple of seconds later.</p>
+    <p>Changing an adapter requires administrator rights, which is why Windows normally shows a permission prompt. During installation OnOffEther registers two Windows scheduled tasks — one to turn the adapter on, one to turn it off — so later on the switch happens with no prompt at all. Both tasks are removed when you uninstall.</p>
+    <div class="note">
+      <strong>Only wired adapters.</strong> Wi-Fi, Bluetooth and virtual adapters (VPN, virtual machines, Hyper-V) are never touched. If your PC has several Ethernet cards, all of them switch together.
+    </div>
+  </section>
+
+  <section id="install">
+    <h2>Install</h2>
+    <ol class="steps">
+      <li>Download <strong>OnOffEther-Setup-1.5.0.exe</strong> and run it. Windows will ask for administrator permission once.</li>
+      <li>Choose your language in the box at the top right, then press <strong>Install</strong>.</li>
+      <li>Press <strong>Open OnOffEther</strong>. When the icon appears in the taskbar, right-click it and choose <strong>Pin to taskbar</strong>.</li>
+    </ol>
+    <p>From then on: click the icon for the ON/OFF panel, or right-click it to switch straight away.</p>
+
+    <h3>Uninstall</h3>
+    <p>Settings → Apps → Installed apps → OnOffEther → Uninstall. If the wired connection is off at that moment, it is turned back on before anything is removed, so you are never left without internet.</p>
+
+    <h3>Requirements</h3>
+    <table class="spec">
+      <tr><th>Operating system</th><td>Windows 10 or Windows 11</td></tr>
+      <tr><th>Hardware</th><td>A wired Ethernet adapter (built in or USB)</td></tr>
+      <tr><th>Permissions</th><td>Administrator, only to install or uninstall</td></tr>
+      <tr><th>Disk space</th><td>Around 130 KB</td></tr>
+    </table>
+  </section>
+
+  <section id="faq">
+    <h2>Questions</h2>
+    <dl class="faq">
+      <dt>Does it affect my Wi-Fi?</dt>
+      <dd>No. It only switches wired Ethernet adapters, so your Wi-Fi keeps working exactly as before.</dd>
+
+      <dt>Will it ask for permission every time I switch?</dt>
+      <dd>No. Permission is granted once during installation.</dd>
+
+      <dt>Does it collect any data?</dt>
+      <dd>No. OnOffEther makes no internet connections of its own and sends nothing anywhere. See the <a href="privacy.html">privacy policy</a>.</dd>
+
+      <dt>Is it safe to turn the adapter off?</dt>
+      <dd>Yes. It is the same switch Windows itself offers in Device Manager, and nothing is modified permanently. Just remember that if the cable is your only connection, turning it off leaves the PC offline until you turn it back on.</dd>
+
+      <dt>What happens if my PC has two network cards?</dt>
+      <dd>They are switched together, and the panel tells you how many were found.</dd>
+
+      <dt>Can I change the language later?</dt>
+      <dd>Yes, from the gear icon in the panel. The choice is saved for your Windows user.</dd>
+    </dl>
+  </section>
+
+  <section id="support">
+    <h2>Support</h2>
+    <p>Something not working, or an idea to make it better? Open a ticket and we will answer there:</p>
+    <p><a href="https://github.com/divolandialabs/onoffether/issues">github.com/divolandialabs/onoffether/issues</a></p>
+    <p>When reporting a problem, it helps a lot to say which version of Windows you use and the name of your network card, which is the grey line in the middle of the panel.</p>
+  </section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <span>© 2026 Divolandia Labs</span>
+    <nav>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+      <a href="es/">Español</a>
+      <a href="https://github.com/divolandialabs/onoffether">GitHub</a>
+    </nav>
+  </div>
+</footer>
+
+</body>
+</html>
