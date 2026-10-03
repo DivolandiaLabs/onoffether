@@ -70,6 +70,8 @@ header.site nav a:hover { color: var(--text); }
 
 .meta { color: var(--muted); font-size: 14px; margin-top: 16px; }
 
+.hero-note { max-width: 620px; margin: 18px auto 0; text-align: left; font-size: 14px; }
+
 .shots {
   display: flex;
   gap: 24px;
